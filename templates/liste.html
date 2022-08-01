@@ -1,0 +1,112 @@
+
+{% load static %}
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>VCard - DCP</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body>
+<div class="main-wrapper">
+
+ {% include "menu.html" %}
+
+
+<header class="blue-header">
+<div class="container">
+<div class="left">
+<span class="hamburgar-icon"><img src="assets/img/icons/hamburgar-icon.svg" alt=""></span>
+</div>
+<div class="page-header-title">
+<h4>Recherche rapide</h4>
+</div>
+</div>
+</header>
+
+<div class="chat-list-new">
+<div class="container"> 
+
+<form class="searchbar">
+<div class="search_chat has-search">
+<span class="fas fa-search form-control-feedback"></span>
+<input class="form-control chat_input" id="search-chat" type="text" placeholder="Nom / Prénom / Profession /Organisation">
+</div>
+</form>
+<div class="chat-list">
+<ul>
+  {% for vcar in vCard %}
+<li >
+<a href="/detailCard?idC={{vcar.id}}" class="chat-link d-flex align-items-center" style="padding: 15px;
+    display: flex;
+    display: -webkit-flex;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 0;
+    box-shadow: 0 3px 10px 0px rgb(123 123 123 / 40%);
+    position: relative;width: 94%;
+   margin: auto 10px 10px 10px;">
+<div class="item-avatar" >
+<span style="    background: red;
+    border: 2px solid #1E88E5;
+    background-color: #BCE0FF;
+    padding: 9px;
+    border-radius: 33px;">{{ vcar.nom|make_list|first|capfirst }}{{ vcar.prenom|make_list|first|capfirst }}</span>
+
+ 
+</div>
+<div class="item-col">
+<div class="item-title-row d-flex justify-content-between">
+<div class="item-title" style="
+    font-weight: bold;
+">{{ vcar.nom|capfirst }} {{vcar.prenom}}<br/>{{vcar.nomar}} {{vcar.prenomar}} </div>
+<div class="item-right" style="display:none;">2 min</div>
+</div>
+<div class="item-text" style="display:none;">{{vcar.profession}}</div>
+ </div>
+</a>
+</li>
+   
+ {% endfor %}
+</ul>
+<br/>
+<br/>
+<br/>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/swiper/js/swiper.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+ 
+ {% endblock %}
+</body>
+</html>

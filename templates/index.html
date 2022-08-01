@@ -1,0 +1,101 @@
+
+{% load static %}
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>VCard - DCP</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body class="home">
+<div class="main-wrapper">
+
+
+
+<header>
+<div class="container">
+
+<div class="d-flex justify-content-between align-items-center">
+<div class="left">
+<span class="hamburgar-icon"><img src="assets/img/icons/hamburgar-icon.svg" alt=""></span>
+</div>
+<div class="right">
+<div class="d-flex align-items-center">
+<div class="me-4">
+<a href="#"><img src="assets/img/icons/bell-icon.svg" alt=""></a>
+</div>
+<div>
+<a href="#" data-bs-toggle="dropdown" aria-expanded="true" class="link"><img src="assets/img/icons/line-grid-icon.svg" alt=""></a>
+<div class="dropdown-menu dropdown-menu-end header_drop_icon">
+<a href="profile.html" class="dropdown-item"><i class="feather-user"></i> My Profile</a>
+<a href="profile-settings.html" class="dropdown-item"><i class="feather-settings"></i> Settings</a>
+<a href="login.html" class="dropdown-item"><i class="feather-log-out"></i> Log Out</a>
+</div>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="banner">
+<div class="container">
+<div class="banner-content text-center">
+<h2>Rechercher une carte de visite</h2>
+ </div>
+<div class="banner-form">
+<form action="/liste">
+ 
+ 
+<button type="submit" class="btn btn-primary search-btn w-100"><i><img src="assets/img/icons/search-icon.svg" alt=""></i> <span>Recherche rapide</span></button>
+</form>
+</br/>
+
+<form action="/parOrganisme">
+ 
+ 
+<button type="submit" class="btn btn-primary search-btn w-100"><i><img src="assets/img/icons/search-icon.svg" alt=""></i> <span>Recherche par organisme</span></button>
+</form>
+</br/>
+ 
+</div>
+</div>
+</div>
+
+
+  
+
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/swiper/js/swiper.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+ 
+ {% endblock %}
+</body>
+</html>

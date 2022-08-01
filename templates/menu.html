@@ -1,0 +1,45 @@
+    <nav class="mobile-nav">
+        <a href="javascript:history.back()" class="bloc-icon">
+            <img src="static/assets/img/back.png" alt="">
+        </a>
+        <a href="#" class="bloc-icon">
+            <img src="ressources/heart.svg" alt="">
+        </a>
+        <a href="/home" class="bloc-icon">
+             <img src="static/assets/img/menu.png" alt="">
+        </a>
+        <a href="#" class="bloc-icon">
+            <img src="ressources/plus.svg" alt="">
+        </a>
+        <a href="/logout" class="bloc-icon">
+             <img src="static/assets/img/logOut.png" alt="">
+        </a>
+    </nav>
+	<style>
+	.mobile-nav {
+ background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    height: 45px;
+    z-index: 99999;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bloc-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloc-icon img {
+  width: 30px;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile-nav {
+  display: none;
+  }
+}
+	</style>

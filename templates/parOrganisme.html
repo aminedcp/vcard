@@ -1,0 +1,96 @@
+
+{% load static %}
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>VCard - DCP</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body>
+<div class="main-wrapper">
+
+ {% include "menu.html" %}
+
+<header class="blue-header">
+<div class="container">
+<div class="left">
+<span class="hamburgar-icon"><img src="assets/img/icons/hamburgar-icon.svg" alt=""></span>
+</div>
+<div class="page-header-title">
+<h4>Liste des Organismes</h4>
+</div>
+</div>
+</header>
+
+<div class="chat-list-new">
+<div class="container"> 
+ 
+<form class="searchbar">
+<div class="search_chat has-search">
+<span class="fas fa-search form-control-feedback"></span>
+<input class="form-control chat_input" id="search-chat" type="text" placeholder="Recherche Organisme">
+</div>
+</form>
+<div class="chat-list">
+<ul>
+
+
+{% for parOrg in parOrganisme %}
+<li style="    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;">
+<a href="/liste?idO={{ parOrg.id }}" class="chat-link d-flex align-items-center">
+ 
+<div class="item-col">
+<div class="item-title-row d-flex justify-content-between">
+<div class="item-title">{{parOrg.nom|lower|capfirst}}</div>
+
+</div>
+
+</div>
+</a>
+</li>
+  
+  {% endfor %}
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/swiper/js/swiper.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+ 
+ {% endblock %}
+</body>
+</html>

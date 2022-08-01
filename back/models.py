@@ -25,7 +25,7 @@ class Organisme(models.Model):
  
     def __str__(self):
         return self.nom
-    class Meta:
+    class Meta: 
         verbose_name = 'Organisme'
         verbose_name_plural = 'Organismes'
 #--------------------------------------------------------  End Organisme ------------------------------------------

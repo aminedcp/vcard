@@ -1,0 +1,82 @@
+
+{% load static %}
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>VCard - DCP</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body class="login">
+<div class="main-wrapper">
+<div class="page-content for-window-height d-flex align-items-center justify-content-center">
+<div>
+<div class="list">
+ 
+<form action="/connexion" method="post">
+<div class="login-inner-col">
+<div class="top-title">
+<div>
+<h3 style="color: lightsteelblue;">GCard</h3>
+ 
+</div>
+</div>
+<ul class="pt-5">
+ {% csrf_token %}
+<li>
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Email" id="username"  name="username">
+</div>
+</li>
+<li>
+<div class="form-group">
+<input type="password" class="form-control" placeholder="Password" id="password"  name="password">
+</div>
+</li>
+<li>
+<div class="form-group">
+<button type="submit" class="btn btn-submit btn-primary w-100">Connexion</button>
+</div>
+</li>
+ 
+</ul>
+ 
+ 
+ 
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/swiper/js/swiper.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+ {% endblock %}
+</body>
+</html>

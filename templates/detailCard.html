@@ -1,0 +1,342 @@
+
+{% load static %}
+ {% block content %}
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>VCard - DCP</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body class="body-bg-gray">
+ 
+<br/>
+ 
+{% for detailCardall in detailCard %}
+
+    {% if forloop.first %}
+<div class="main-wrapper">
+
+ {% include "menu.html" %}
+
+
+<div class="gradient-header"></div>
+<header>
+<div class="container">
+<div class="left">
+<span class="hamburgar-icon"><img src="assets/img/icons/hamburgar-icon.svg" alt=""></span>
+</div>
+<div class="page-header-title">
+<h4>Détail carte de visite</h4>
+</div>
+</div>
+</header>
+
+<div class="container">  
+
+
+
+<div class="top-profile-widget">
+<div class="d-flex align-items-center">
+<div class="profile-left me-3">
+<div class="avatar">
+<span>{{ detailCardall.nom|make_list|first|capfirst }}{{ detailCardall.prenom|make_list|first|capfirst }}</span>
+</div>
+</div>
+<div class="profile-right">
+<h2>  {{ detailCardall.nom|capfirst }} {{detailCardall.prenom}}</h2>
+<span>{{ detailCardall.profession|capfirst }}</span>
+ 
+</div>
+</div><div class="text-center">
+<br/>
+<div><span class="text-primary">
+
+  {% for org in organisme %}
+
+{% if org.id == detailCardall.organisme_id %}
+
+<a href="/liste?idO={{ detailCardall.organisme_id }}">{{ org.nom|lower|capfirst }}</a>
+{% endif %}
+ {% endfor %}
+
+
+</span></div>
+ 
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="mentee-list">
+<div class="container">
+<div>
+
+<div class="card">
+<div class="card-body">
+<div class="about-col">
+
+		<img src="media/{{detailCardall.cv_recto}}" alt="">
+		<img src="media/{{detailCardall.cv_verso}}" alt="">
+
+</div>
+</div>
+</div>
+
+
+<div class="card">
+{% if detailCardall.note != '' %}<div class="card-body">
+
+
+
+  
+
+<div class="about-col">
+<div class="mb-2">
+<h5>Note</h5>
+</div>
+<p>{{detailCardall.note}}</p>
+</div>
+
+
+
+</div>{% endif %}
+</div>
+ 
+<div class="card">
+<div class="card-body">
+<div class="about-col">
+<div class="mb-2">
+<h5>Détails personnels</h5>
+</div>
+<ul class="profile-details">
+
+{% if detailCardall.telephoneperso1 != '' %}
+
+<li>
+<div class="details-icon">
+<img src="{% static 'assets/img/icons/phone-white-icon.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>
+{% if detailCardall.telephoneperso2 != '' %}
+  Télephone 1
+{% endif %}
+{% if detailCardall.telephoneperso2 == '' %}
+  Télephone
+{% endif %}
+ </h6>
+<span>{{ detailCardall.telephoneperso1|cut:" " }}</span>
+</div>
+</li>
+ {% endif %}
+{% if detailCardall.telephoneperso2 != '' %}
+  
+
+<li>
+<div class="details-icon purple">
+<img src="{% static 'assets/img/icons/phone-white-icon.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Telephone 2  </h6>
+<span>{{ detailCardall.telephoneperso2|cut:" " }} </span>
+</div>
+</li>
+{% endif %}
+{% if detailCardall.emailperso != '' %}
+<li>
+<div class="details-icon green">
+<img src="{% static 'assets/img/icons/mail-icon.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Email</h6>
+<span>{{ detailCardall.emailperso|cut:" " }}</span>
+</div>
+</li>
+
+ {% endif %}
+
+
+</ul>
+</div>
+</div>
+</div>
+
+ 
+<div class="card">
+<div class="card-body">
+<div class="about-col">
+<div class="mb-2">
+<h5>Détails professionnels</h5>
+</div>
+<ul class="profile-details">
+
+{% if detailCardall.telephonepro1 != '' %}
+  
+
+<li>
+<div class="details-icon pink">
+<img src="{% static 'assets/img/icons/phone-white-icon.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>{% if detailCardall.telephonepro2 != '' %}
+  Télephone 1
+{% endif %}
+{% if detailCardall.telephonepro2 == '' %}
+  Télephone
+{% endif %}</h6>
+<span>{{ detailCardall.telephonepro1|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+{% if detailCardall.telephonepro2 != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/phone-white-icon.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Télepehone 2</h6>
+<span>{{ detailCardall.telephonepro2|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+
+{% if detailCardall.emailorganisme1 != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/icon5.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>{% if detailCardall.emailorganisme2 != '' %}
+  Email 1
+{% endif %}
+{% if detailCardall.emailorganisme2 == '' %}
+  Email
+{% endif %}</h6>
+<span>{{ detailCardall.emailorganisme1|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+
+{% if detailCardall.emailorganisme2 != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/icon5.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Email 2</h6>
+<span>{{ detailCardall.emailorganisme2|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+
+
+{% if detailCardall.Adressepro != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/icon9.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Adresse</h6>
+<span>{{ detailCardall.Adressepro }}</span>
+</div>
+</li>
+{% endif %}
+
+{% if detailCardall.fax != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/icon5.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Fax</h6>
+<span>{{ detailCardall.fax|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+
+{% if detailCardall.site_web != '' %}
+<li>
+<div class="details-icon violet">
+<img src="{% static 'assets/img/icons/icon5.svg' %}" alt="">
+</div>
+<div class="profile-details-content">
+<h6>Site web</h6>
+<span>{{ detailCardall.site_web|cut:" " }}</span>
+</div>
+</li>
+{% endif %}
+
+</ul>
+</div>
+</div>
+</div>
+
+ 
+ 
+</div>
+</div>
+</div>
+
+</div>
+
+    {% endif %}
+
+         {% endfor %}
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/swiper/js/swiper.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+ 
+ {% endblock %}
+</body>
+</html>

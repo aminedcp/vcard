@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+<title>Mentoring - Bootstrap HTML Mobile Template</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="assets/css/jquery.datepicker2.css">
+
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/feather.css">
+
+<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+<div class="main-wrapper">
+
+<div class="side-menu" id="sidebar-menu">
+<div class="close-btn"><i class="feather-x"></i></div>
+<ul>
+<li>
+<a class="" href="index.html">
+<i class="feather-home"></i>
+Dashboard
+</a>
+</li>
+<li>
+<a class="" href="appointments.html">
+<i class="feather-align-right"></i>
+Appointments
+</a>
+</li>
+<li>
+<a class="" href="bookings.html">
+<i class="feather-book"></i>
+Bookings
+</a>
+</li>
+<li>
+<a class="" href="schedule-timings.html">
+<i class="feather-clock"></i>
+Schedule Timings
+</a>
+</li>
+<li>
+<a class="" href="invoices.html">
+<i class="feather-file-minus"></i>
+Invoices
+</a>
+</li>
+<li>
+<a class="" href="chat.html">
+<i class="feather-message-circle"></i>
+Chat
+</a>
+</li>
+<li>
+<a class="" href="profile-settings.html">
+<i class="feather-settings"></i>
+Profile Settings
+</a>
+</li>
+<li>
+<a class="" href="reviews.html">
+<i class="feather-star"></i>
+Reviews
+</a>
+</li>
+<li>
+<a class="" href="pages.html">
+<i class="feather-layout"></i>
+Pages
+</a>
+</li>
+<li>
+<a class="" href="admin/login.html">
+<i class="feather-user-plus"></i>
+Admin
+</a>
+</li>
+</ul>
+<a class="sidebar-logout" href="login.html"><span><i class="feather-log-out"></i></span>Logout</a>
+</div>
+
+
+<div class="gradient-header"></div>
+<header>
+<div class="container">
+<div class="left">
+<span class="hamburgar-icon"><img src="assets/img/icons/hamburgar-icon.svg" alt=""></span>
+</div>
+<div class="page-header-title">
+<h4>Profile Settings</h4>
+</div>
+</div>
+</header>
+
+<div class="container">
+<div class="profile-upload mt-3">
+<div class="img-upload">
+<input type='file' onchange="readURL(this);" />
+<img id="img-upload" src="assets/img/user/user.jpg" alt="" />
+<span class="upload-icon"><img src="assets/img/icons/upload-icon.svg" alt=""></span>
+</div>
+</div>
+</div>
+
+<div class="profile-settings pt-4">
+<div class="container">
+<form>
+<div class="form-group">
+<label>First Name</label>
+<input type="text" class="form-control" value="Jonathan">
+</div>
+<div class="form-group">
+<label>Last Name</label>
+<input type="text" class="form-control" value="Doe">
+</div>
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="text" name="date" id="date" data-select="datepicker" autocomplete="off" class="form-control" value="24/07/1983">
+</div>
+<div class="form-group">
+<label>Blood Group</label>
+<input type="text" class="form-control" value="A-">
+</div>
+<div class="form-group">
+<label>Email ID</label>
+<input type="text" class="form-control" value="jonanthandoe@example.com">
+</div>
+<div class="form-group">
+<label>Mobile</label>
+<input type="text" class="form-control" value="+1 202-555-0125">
+</div>
+<div class="form-group">
+<label>Address</label>
+<textarea class="form-control">806 Twin Willow Lane</textarea>
+</div>
+<div class="form-group">
+<label>State</label>
+<input type="text" class="form-control" value="Newyork">
+</div>
+<div class="form-group">
+<label>Zip Code</label>
+<input type="text" class="form-control" value="13420">
+</div>
+<div class="form-group">
+<label>Country</label>
+<input type="text" class="form-control" value="United States">
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary search-btn w-100"><span>Save Changes</span></button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/jquery.datepicker2.js"></script>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
