@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'visitcard.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.mysql',
-'NAME': 'vcard',
-'USER': 'root',
-'PASSWORD': "",
-'HOST': "",
-'PORT': "",
+'NAME': 'xzhk8402_vcard ',
+'USER': 'xzhk8402_vcarduser',
+'PASSWORD': "6&,sBE,5z}nD",
+'HOST': "109.234.164.67",
+'PORT': "3306",
 'OPTIONS': {
 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
 }
