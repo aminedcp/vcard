@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8t+nz90av%s)wxjawu%q_o22o_vsva17@z((07#5ur()%z!fb*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.60.101']
+ALLOWED_HOSTS = ['https://vcarddcp.herokuapp.com','vcarddcp.herokuapp.com','www.vcarddcp.herokuapp.com']
 
 
 # Application definition
@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'static'))
+ 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
